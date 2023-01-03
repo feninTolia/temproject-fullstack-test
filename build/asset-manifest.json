@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7424ca10.css",
+    "main.js": "/static/js/main.7734851f.js",
+    "static/css/844.59cf2e01.chunk.css": "/static/css/844.59cf2e01.chunk.css",
+    "static/js/844.7627c291.chunk.js": "/static/js/844.7627c291.chunk.js",
+    "static/css/146.c9db1745.chunk.css": "/static/css/146.c9db1745.chunk.css",
+    "static/js/146.127a9f6e.chunk.js": "/static/js/146.127a9f6e.chunk.js",
+    "static/media/home_tablet@2x.webp": "/static/media/home_tablet@2x.e7471da98f12162e4626.webp",
+    "static/media/about.png": "/static/media/about.2530d87cb7da658269d9.png",
+    "static/media/home_desktop@2x.webp": "/static/media/home_desktop@2x.09a42a282d0b5c74c402.webp",
+    "static/media/Poppins-Bold.ttf": "/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "static/media/home_mobile@2x.webp": "/static/media/home_mobile@2x.95a93ae9067c96beb597.webp",
+    "static/media/Manrope-Medium.ttf": "/static/media/Manrope-Medium.7e416a42443e06ed7d57.ttf",
+    "static/media/Manrope-Regular.ttf": "/static/media/Manrope-Regular.25323263b2aac026e777.ttf",
+    "static/media/Manrope-Bold.ttf": "/static/media/Manrope-Bold.15c3a2fdedaee1ebf773.ttf",
+    "static/media/sprite.svg": "/static/media/sprite.18a290486ad9c8ad28cf58841f606956.svg",
+    "static/media/font_desktopSize.svg": "/static/media/font_desktopSize.fcff7a885f6135c5fa4b.svg",
+    "static/media/font_tabletSize.svg": "/static/media/font_tabletSize.d0a087ad0173891ed7e2.svg",
+    "static/media/font_phoneSize.svg": "/static/media/font_phoneSize.8bf5073e8fd97448d3f7.svg",
+    "index.html": "/index.html",
+    "main.7424ca10.css.map": "/static/css/main.7424ca10.css.map",
+    "main.7734851f.js.map": "/static/js/main.7734851f.js.map",
+    "844.59cf2e01.chunk.css.map": "/static/css/844.59cf2e01.chunk.css.map",
+    "844.7627c291.chunk.js.map": "/static/js/844.7627c291.chunk.js.map",
+    "146.c9db1745.chunk.css.map": "/static/css/146.c9db1745.chunk.css.map",
+    "146.127a9f6e.chunk.js.map": "/static/js/146.127a9f6e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7424ca10.css",
+    "static/js/main.7734851f.js"
+  ]
+}
