@@ -1,15 +1,29 @@
-import { useState, useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
 
-import { redirect, useLocation } from 'react-router-dom';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import Header from '../Header';
+import ModalContent from '../Modal/ModalContent/ModalContent';
+import AddPetModal from '../AddPetModal/AddPetModal';
 
-import Header from '../Header/Header';
-import style from './SharedLayout.module.css';
+import style from './SharedLayout.module.scss';
 
 const SharedLayout = () => {
   return (
     <div className={style.layoutContainer}>
-      <Header />
+      <div className={style.headerContainer}>
+        <Header />
+      </div>
+
+      <>
+        <ModalContent
+          trigger={props => (
+            <button style={{ position: 'absolute' }} type="button" {...props}>
+              Add pet
+            </button>
+          )}
+        >
+          <AddPetModal></AddPetModal>
+        </ModalContent>
+      </>
 
       <div className={style.outlets}>
         <Outlet />

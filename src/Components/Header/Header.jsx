@@ -1,54 +1,58 @@
-import React from 'react';
-import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 
-import style from './Header.module.css';
+import Navigation from './Navigation';
+import MobileNavigation from './MobileNavigation';
+
+import AuthGroup from './AuthGroup';
+import { NavLink } from 'react-router-dom';
+
+import style from './Header.module.scss';
 
 const Header = () => {
+  const [openMobileMenu, setOpenMobileMenu] = useState(false);
+  const [matches, setMatches] = useState(
+    window.matchMedia('(min-width: 1280px)').matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia('(min-width: 1280px)')
+      .addEventListener('change', e => setMatches(e.matches));
+  }, []);
+
+  useEffect(() => {
+    if (matches && openMobileMenu) {
+      // document.body.classList.toggle('NotScroll');
+      document.body.classList.remove('NotScroll');
+    }
+    if (!openMobileMenu) {
+      document.body.classList.remove('NotScroll');
+    }
+
+    if (openMobileMenu && !matches) {
+      document.body.classList.add('NotScroll');
+    }
+  }, [matches, openMobileMenu]);
+
+  const onOpenMobileMenu = () => setOpenMobileMenu(!openMobileMenu);
+
   return (
-    <nav className={style.container}>
-      <div className={style.navGroupe}>
+    <section className={style.section + ' container'}>
+      <NavLink to="/">
         <span className={style.logo}>
           pe<span className={style.logo_accent}>t</span>ly
         </span>
+      </NavLink>
 
-        <NavLink to="/news" className={style.nav_item}>
-          <span>News</span>
-        </NavLink>
-
-        <NavLink to="/notices" className={style.nav_item}>
-          <span>Find pet</span>
-        </NavLink>
-
-        <NavLink to="/friends" className={style.nav_item}>
-          <span>Our friends</span>
-        </NavLink>
+      <div className={style.navGroup}>
+        <Navigation />
+        <MobileNavigation onOpenMobileMenu={onOpenMobileMenu} />
       </div>
 
-      <div className={style.authGroupe}>
-        {'if authorized' && (
-          <>
-            <NavLink to="/user" className={style.auth_item}>
-              Acсount
-            </NavLink>
-          </>
-        )}
-
-        {'if NOT authorized' && (
-          <>
-            <NavLink to="/login" className={style.auth_item}>
-              <span>Login</span>
-            </NavLink>
-
-            <NavLink
-              to="/register"
-              className={`${style.auth_item} ${style.auth_item__secondary}`}
-            >
-              <span>Registration</span>
-            </NavLink>
-          </>
-        )}
+      <div className={style.authGroup}>
+        {(!openMobileMenu || matches) && <AuthGroup />}
       </div>
-    </nav>
+    </section>
   );
 };
 
